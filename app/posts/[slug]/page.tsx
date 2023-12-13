@@ -17,7 +17,7 @@ const SinglePage = async ({ params: { slug } }: SinglePageProps) => {
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.textContainer}>
-          <h1 className={styles.title}>{post?.title}</h1>
+          <h1 className={styles.title} data-testId="postsTitle">{post?.title}</h1>
           <div className={styles.user}>
             {post?.user?.image && (
               <div className={styles.userImageContainer}>

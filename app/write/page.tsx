@@ -101,17 +101,18 @@ const WritePage = () => {
           placeholder="Title"
           className={styles.input}
           onChange={(e) => setTitle(e.target.value)}
+          data-testId="writeTitleInput"
         />
 
         <div className={styles.options}>
-          <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)} >
+          <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)} data-testId="writeSelectCat">
             <option value="">Category</option>
             {categoryList.map((item) => (
               <option value={item.slug} key={item.id}>{item.title}</option>
             ))}
           </select>
 
-          <button className={styles.publish} onClick={handleSubmit}>
+          <button className={styles.publish} onClick={handleSubmit} data-testId="writePublishBtn">
             Publish
           </button>
         </div>
@@ -150,7 +151,7 @@ const WritePage = () => {
         )}
       </div>
 
-      <div className={styles.editor}>
+      <div className={styles.editor} data-testId="writeTextArea">
         <ReactQuill
           className={styles.textArea}
           theme="bubble"
