@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 import { getCategories } from '@/lib/data';
 
@@ -16,7 +15,7 @@ const CategoryList = async () => {
                         href={`/blog?cat=${category.slug}&page=1&limit=4`}
                         key={category.id}
                         className={`${styles.category}`}
-                        style={{ backgroundColor: category.color }}
+                        style={{ backgroundColor: category.color || "" }}
                     >
                         #{category.slug}
                     </Link>

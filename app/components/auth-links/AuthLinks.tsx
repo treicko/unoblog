@@ -24,6 +24,7 @@ const AuthLinks = () => {
             {session ? (
                 <>
                     <Link href="/write" className={styles.link} data-testId="writeLink">Write</Link>
+                    <Link href="/categories" className={styles.link}>Categories</Link>
                     <span className={styles.link} onClick={handleLogout}>
                         Logout
                     </span>

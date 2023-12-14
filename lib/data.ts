@@ -1,5 +1,24 @@
-import { Category, Post, User } from "@prisma/client";
+import { Category, Post, User, Color } from "@prisma/client";
 import { PaginatedPostsResponse } from "./definitions";
+
+export const getColors = async (): Promise<Color[]> => {
+  try {
+    const response = await fetch("http://localhost:3000/api/colors", {
+      method: "GET",
+      cache: "no-cache",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch Colors on response!");
+    }
+
+    const responseData = await response.json();
+
+    return responseData;
+  } catch (err:any) {
+    throw new Error("Failed to fetch colors, err: ", err);
+  }
+};
 
 export const getCategories = async (): Promise<Category[]> => {
   try {

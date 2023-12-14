@@ -90,3 +90,8 @@ model Comment {
   postSlug  String
   post      Post     @relation(fields: [postSlug], references: [slug])
 }
+
+model Color {
+  id        String   @id @default(cuid()) @map("_id")
+  name      String
+}
